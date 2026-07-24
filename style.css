@@ -177,12 +177,14 @@ body.sidebar-hidden #sidebar {
   min-width: 0;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: auto;
   padding: 88px clamp(20px, 5vw, 72px) 48px;
 }
 
 .topic-panel {
   display: none;
   max-width: 980px;
+  min-width: 660px;
 }
 
 .topic-panel.active {
@@ -382,27 +384,8 @@ body.sidebar-hidden #sidebar {
     display: none;
   }
 
-  #content {
-    width: 100%;
-  }
-
   body:not(.sidebar-hidden) #content {
     display: none;
-  }
-
-  .cv-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .avatar {
-    width: 120px;
-    height: 155px;
   }
 }
 
@@ -446,5 +429,6 @@ body {
 
   .topic-panel {
     max-width: none;
+    min-width: 0;
   }
 }
