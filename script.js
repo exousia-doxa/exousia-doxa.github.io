@@ -74,8 +74,19 @@ function setGoogTransLang(lang) {
   location.reload();
 }
 
+function detectSystemLang() {
+  var candidates = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+  for (var i = 0; i < candidates.length; i++) {
+    var code = candidates[i].split("-")[0].toLowerCase();
+    if (code !== "en") {
+      return code;
+    }
+  }
+  return "en";
+}
+
 (function initTranslate() {
-  var sysLang = (navigator.language || "en").split("-")[0].toLowerCase();
+  var sysLang = detectSystemLang();
   var activeLang = getGoogTransLang();
 
   if (activeLang) {
@@ -105,3 +116,7 @@ function setGoogTransLang(lang) {
     setGoogTransLang(sysLang);
   });
 })();
+
+document.getElementById("print-btn").addEventListener("click", function () {
+  window.print();
+});
