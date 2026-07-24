@@ -51,6 +51,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  min-width: 340px;
 }
 
 body {
@@ -190,18 +191,19 @@ body.sidebar-hidden #sidebar {
 
 .profile-header {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 24px;
   margin-bottom: 40px;
 }
 
 .avatar {
   width: 140px;
-  height: 180px;
+  min-height: 150px;
   border-radius: 12px;
   object-fit: cover;
   border: 1px solid var(--border);
   flex-shrink: 0;
+  align-self: stretch;
 }
 
 .profile-header h1 {
