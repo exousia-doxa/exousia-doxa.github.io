@@ -89,13 +89,21 @@ function detectSystemLang() {
 (function initTranslate() {
   var sysLang = detectSystemLang();
   var activeLang = getGoogTransLang();
+  var codes = [];
 
   if (sysLang !== "en") {
-    var opt = document.createElement("option");
-    opt.value = sysLang;
-    opt.textContent = sysLang.toUpperCase();
-    translateSelect.appendChild(opt);
+    codes.push(sysLang);
   }
+  if (activeLang && activeLang !== "en" && codes.indexOf(activeLang) === -1) {
+    codes.push(activeLang);
+  }
+
+  codes.forEach(function (code) {
+    var opt = document.createElement("option");
+    opt.value = code;
+    opt.textContent = code.toUpperCase();
+    translateSelect.appendChild(opt);
+  });
 
   var enOpt = document.createElement("option");
   enOpt.value = "en";

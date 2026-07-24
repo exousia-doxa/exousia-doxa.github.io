@@ -148,6 +148,8 @@ body.sidebar-hidden #sidebar {
 
 .sidebar-footer select {
   font-size: 0.8rem;
+  text-align: center;
+  text-align-last: center;
 }
 
 .sidebar-footer button:hover,
