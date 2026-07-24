@@ -4,6 +4,8 @@ var mobileQuery = window.matchMedia("(max-width: 720px)");
 
 function setSidebarHidden(hidden) {
   body.classList.toggle("sidebar-hidden", hidden);
+  toggleBtn.setAttribute("aria-expanded", String(!hidden));
+  toggleBtn.textContent = hidden ? "›" : "‹";
 }
 
 toggleBtn.addEventListener("click", function () {
