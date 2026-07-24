@@ -1,3 +1,15 @@
+var body = document.body;
+var toggleBtn = document.getElementById("sidebar-toggle");
+var mobileQuery = window.matchMedia("(max-width: 720px)");
+
+function setSidebarHidden(hidden) {
+  body.classList.toggle("sidebar-hidden", hidden);
+}
+
+toggleBtn.addEventListener("click", function () {
+  setSidebarHidden(!body.classList.contains("sidebar-hidden"));
+});
+
 document.querySelectorAll(".topic-btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var topic = btn.getAttribute("data-topic");
@@ -10,5 +22,9 @@ document.querySelectorAll(".topic-btn").forEach(function (btn) {
     document.querySelectorAll(".topic-panel").forEach(function (panel) {
       panel.classList.toggle("active", panel.id === topic);
     });
+
+    if (mobileQuery.matches) {
+      setSidebarHidden(true);
+    }
   });
 });
