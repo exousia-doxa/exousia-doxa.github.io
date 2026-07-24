@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Vladyslav Mykhailov, Junior IT Operations Engineer.">
+<meta name="color-scheme" content="light dark">
 <title>Vladyslav Mykhailov</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-<button id="sidebar-toggle" aria-label="Toggle menu">&#9776;</button>
+<button id="sidebar-toggle" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="true">&#8249;</button>
 
 <nav id="sidebar">
   <div class="brand">Vladyslav Mykhailov</div>
@@ -28,9 +30,9 @@
       <ul class="contact-list">
         <li><a href="mailto:v.mikhaylov.studywork@gmail.com">v.mikhaylov.studywork@gmail.com</a></li>
         <li><a href="tel:+380969079128">+380 96 907 9128</a></li>
-        <li><a href="https://www.linkedin.com/in/exousia-doxa/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/exousia-doxa" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://exousiadoxa.com" target="_blank" rel="noopener">exousiadoxa.com</a></li>
+        <li><a href="https://www.linkedin.com/in/exousia-doxa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/exousia-doxa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://exousiadoxa.com" target="_blank" rel="noopener noreferrer">exousiadoxa.com</a></li>
       </ul>
     </header>
 
@@ -55,43 +57,59 @@
 
         <section class="block">
           <h2>Technologies &amp; Tools</h2>
-          <p class="plain-list">
-            &middot; Python, Java, C++<br>
-            &middot; Bash, PowerShell<br>
-            &middot; Terraform Open-source/Cloud<br>
-            &middot; Git, GitHub, Azure DevOps<br>
-            &middot; Docker<br>
-            &middot; AWS EC2, Azure Portal/Entra<br>
-            &middot; Datadog, Splunk, KQL<br>
-            &middot; Google Workspace/Apps Script<br>
-            &middot; Fortinet, Mikrotik<br>
-            &middot; VeraCrypt<br>
-            &middot; AD, DHCP, DNS, TCP/IP, RDP, GPO<br>
-            &middot; Debian, Windows
-          </p>
+          <table class="info-table">
+            <tbody>
+              <tr><td>Python, Java, C++</td></tr>
+              <tr><td>Bash, PowerShell</td></tr>
+              <tr><td>Terraform Open-source/Cloud</td></tr>
+              <tr><td>Git, GitHub, Azure DevOps</td></tr>
+              <tr><td>Docker</td></tr>
+              <tr><td>AWS EC2, Azure Portal/Entra</td></tr>
+              <tr><td>Datadog, Splunk, KQL</td></tr>
+              <tr><td>Google Workspace/Apps Script</td></tr>
+              <tr><td>Fortinet, Mikrotik</td></tr>
+              <tr><td>VeraCrypt</td></tr>
+              <tr><td>AD, DHCP, DNS, TCP/IP, RDP, GPO</td></tr>
+              <tr><td>Debian, Windows</td></tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="block">
           <h2>Degree</h2>
-          <p class="plain-list">
-            Bachelor&rsquo;s at Taras Shevchenko KNU<br>
-            Applied Programming<br>
-            2022 &ndash; 2026
-          </p>
+          <table class="info-table">
+            <tbody>
+              <tr><td>Bachelor&rsquo;s at Taras Shevchenko KNU</td></tr>
+              <tr><td>Applied Programming</td></tr>
+              <tr><td>2022 &ndash; 2026</td></tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="block">
           <h2>Certificates</h2>
-          <p class="plain-list">&middot; Terraform Associate (004)</p>
+          <table class="info-table">
+            <thead>
+              <tr><th>Certificate</th><th>Code</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Terraform Associate</td><td>004</td></tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="block">
           <h2>Languages</h2>
-          <p class="plain-list">
-            English &ndash; B2<br>
-            Ukrainian &ndash; Native<br>
-            Russian &ndash; Native
-          </p>
+          <table class="info-table">
+            <thead>
+              <tr><th>Language</th><th>Level</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>English</td><td>B2</td></tr>
+              <tr><td>Ukrainian</td><td>Native</td></tr>
+              <tr><td>Russian</td><td>Native</td></tr>
+            </tbody>
+          </table>
         </section>
 
       </div>
@@ -116,14 +134,14 @@
               <span class="entry-date">08.2025 &ndash; 06.2026</span>
             </div>
             <p class="entry-sub">Diya &middot; Traffix &middot; Full-time, remote</p>
-            <p class="plain-list">
-              &middot; Coordinating with developers on their pre/post deployment project needs, provisioning solutions via IaC tools.<br>
-              &middot; Developing and maintaining Terraform IaC codebase to provision and evolve Azure infrastructure for a microservices architecture, standardising modules and variables, deploying changes via Azure DevOps pipelines.<br>
-              &middot; Monitoring production health with Application Insights, Azure Monitor, and Log Analytics, authoring targeted KQL queries to surface anomalies, exceptions, and performance regressions.<br>
-              &middot; Performing code-level root-cause analysis and logging clear, actionable tickets, collaborating with developers through resolution.<br>
-              &middot; Configuring real-time dashboards for diverse Azure resources (web apps, function apps, databases, storage accounts, APIM, etc.) to spot issues immediately.<br>
-              &middot; Implementing and tuning alerts and diagnostic settings to improve signal-to-noise and accelerate incident triage.
-            </p>
+            <ul class="entry-list">
+              <li>Coordinating with developers on their pre/post deployment project needs, provisioning solutions via IaC tools.</li>
+              <li>Developing and maintaining Terraform IaC codebase to provision and evolve Azure infrastructure for a microservices architecture, standardising modules and variables, deploying changes via Azure DevOps pipelines.</li>
+              <li>Monitoring production health with Application Insights, Azure Monitor, and Log Analytics, authoring targeted KQL queries to surface anomalies, exceptions, and performance regressions.</li>
+              <li>Performing code-level root-cause analysis and logging clear, actionable tickets, collaborating with developers through resolution.</li>
+              <li>Configuring real-time dashboards for diverse Azure resources (web apps, function apps, databases, storage accounts, APIM, etc.) to spot issues immediately.</li>
+              <li>Implementing and tuning alerts and diagnostic settings to improve signal-to-noise and accelerate incident triage.</li>
+            </ul>
           </article>
 
           <article class="entry">
@@ -153,6 +171,6 @@
 
 </main>
 
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
