@@ -6,7 +6,7 @@
 <meta name="description" content="Portfolio of Vladyslav Mykhailov, Junior IT Operations Engineer.">
 <meta name="color-scheme" content="light dark">
 <title>Vladyslav Mykhailov</title>
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -20,7 +20,13 @@
     <li><button class="topic-btn" data-topic="events">Events</button></li>
     <li><button class="topic-btn" data-topic="thoughts">Thoughts</button></li>
   </ul>
+  <div class="sidebar-footer">
+    <button id="theme-toggle" aria-label="Change theme" title="Change theme">&#9788;</button>
+    <button id="translate-toggle" aria-label="Translate page" title="Translate page" hidden></button>
+  </div>
 </nav>
+
+<div id="google_translate_element"></div>
 
 <main id="content">
 
@@ -182,6 +188,12 @@
 
 </main>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: "en", autoDisplay: false }, "google_translate_element");
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
