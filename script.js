@@ -33,7 +33,8 @@ document.querySelectorAll(".topic-btn").forEach(function (btn) {
 
 // Theme: cycles system -> light -> dark -> system, persisted.
 var themeBtn = document.getElementById("theme-toggle");
-var THEME_LABELS = { system: "Auto", light: "Light", dark: "Dark" };
+var THEME_NAMES = { system: "Auto", light: "Light", dark: "Dark" };
+var THEME_ICONS = { system: "◐", light: "☀", dark: "☾" };
 var THEME_ORDER = ["system", "light", "dark"];
 
 function applyTheme(theme) {
@@ -42,8 +43,8 @@ function applyTheme(theme) {
   } else {
     document.documentElement.setAttribute("data-theme", theme);
   }
-  themeBtn.textContent = THEME_LABELS[theme];
-  themeBtn.title = "Theme: " + THEME_LABELS[theme] + " (click to change)";
+  themeBtn.textContent = THEME_ICONS[theme];
+  themeBtn.title = "Theme: " + THEME_NAMES[theme] + " (click to change)";
 }
 
 var storedTheme = localStorage.getItem("theme") || "system";
@@ -56,8 +57,8 @@ themeBtn.addEventListener("click", function () {
   applyTheme(next);
 });
 
-// Translate: proposes the browser's language via Google Translate, always offers English back.
-var translateBtn = document.getElementById("translate-toggle");
+// Translate: dropdown always offers English; adds the browser's language if it differs.
+var translateSelect = document.getElementById("translate-select");
 
 function getGoogTransLang() {
   var match = document.cookie.match(/googtrans=\/en\/([a-zA-Z-]+)/);
@@ -89,31 +90,22 @@ function detectSystemLang() {
   var sysLang = detectSystemLang();
   var activeLang = getGoogTransLang();
 
-  if (activeLang) {
-    translateBtn.hidden = false;
-    translateBtn.textContent = "English";
-    translateBtn.title = "Show original (English)";
-    translateBtn.addEventListener("click", function () {
-      setGoogTransLang(null);
-    });
-    return;
+  if (sysLang !== "en") {
+    var opt = document.createElement("option");
+    opt.value = sysLang;
+    opt.textContent = sysLang.toUpperCase();
+    translateSelect.appendChild(opt);
   }
 
-  if (sysLang === "en") {
-    return;
-  }
+  var enOpt = document.createElement("option");
+  enOpt.value = "en";
+  enOpt.textContent = "EN";
+  translateSelect.appendChild(enOpt);
 
-  var label = sysLang;
-  try {
-    label = new Intl.DisplayNames([sysLang], { type: "language" }).of(sysLang);
-    label = label.charAt(0).toUpperCase() + label.slice(1);
-  } catch (e) {}
+  translateSelect.value = activeLang || "en";
 
-  translateBtn.hidden = false;
-  translateBtn.textContent = label;
-  translateBtn.title = "Translate to " + label;
-  translateBtn.addEventListener("click", function () {
-    setGoogTransLang(sysLang);
+  translateSelect.addEventListener("change", function () {
+    setGoogTransLang(translateSelect.value === "en" ? null : translateSelect.value);
   });
 })();
 

@@ -132,18 +132,26 @@ body.sidebar-hidden #sidebar {
   border-top: 1px solid var(--border);
 }
 
-.sidebar-footer button {
+.sidebar-footer button,
+.sidebar-footer select {
   flex: 1;
+  min-width: 0;
   background: none;
   border: none;
   border-radius: 6px;
   padding: 8px 4px;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
   color: var(--text-muted);
   cursor: pointer;
 }
 
-.sidebar-footer button:hover {
+.sidebar-footer select {
+  font-size: 0.8rem;
+}
+
+.sidebar-footer button:hover,
+.sidebar-footer select:hover {
   background: var(--tag-bg);
   color: var(--accent);
 }
@@ -316,10 +324,8 @@ body.sidebar-hidden #sidebar {
 
 .entry-head {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .entry-head h3 {
