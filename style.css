@@ -148,6 +148,22 @@ body.sidebar-hidden #sidebar {
   display: block;
 }
 
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
 .profile-header h1 {
   margin: 0 0 6px;
   font-size: 1.9rem;
